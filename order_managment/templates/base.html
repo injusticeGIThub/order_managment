@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафе "Effective Mobile"</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Кафе "Effective Mobile"</h1>
+            <nav class="nav">
+                <a href="{% url 'orders:order_list' %}" class="nav-link">Список заказов</a>
+                <a href="{% url 'orders:order_create' %}" class="nav-link">Создать заказ</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+            <script src="{% static 'js/orders.js' %}"></script>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Кафе "Управление заказами"</p>
+        </div>
+    </footer>
+</body>
+</html>

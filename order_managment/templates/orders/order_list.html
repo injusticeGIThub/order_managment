@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% csrf_token %}
+<h1>Список заказов</h1>
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Поиск по номеру стола или статусу" class="form-control">
+    <button id="search-btn" class="btn btn-primary">Найти</button>
+</div>
+<table id="order-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Стол</th>
+            <th>Блюда</th>
+            <th>Сумма</th>
+            <th>Статус</th>
+            <th>Удалить</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<button id="revenue-btn" class="btn btn-primary">Посмотреть выручку за сегодня</button>
+
+<div id="revenue-display" style="display:none;">
+    <h2>Выручка за сегодня: <span id="revenue-amount"></span> руб.</h2>
+</div>
+{% endblock %}
